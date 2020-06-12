@@ -29,7 +29,7 @@ tensorboard --logdir cifar_classification/resnet/resnet_RK12_lr_0.1_h_None
 - Multiple evaluation time-points mode <br/>
 ```train_multieval.py``` uses the solver defined in ```torch_ACA/odesolver/ode_solver.py```, this mode supports extracting outputs from multiple time points between t0 and t1. 
 
-- Note: <br/>
+- Note for multiple evaluation time-points mode: <br/>
 ```
    (1) Evaluation time 't_eval' must be specified in a list. 
         e.g.  t_eval = [a1, a2, a3 ..., an]  where t0 < a1 < a2 < ... t1, or t1 < a1 < a2 < ... < t0 
