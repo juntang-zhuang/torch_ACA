@@ -14,6 +14,11 @@ Code is in folder ```cifar_classification```
 ```
 python train.py
 ```
+You can visualize the training and validation curve with 
+```
+tensorboard --logdir cifar_classification/resnet/resnet_RK12_lr_0.1_h_None
+```
+
 #### Train with different modes of solvers
 -```train.py``` uses the solver defined in ```torch_ACA/odesolver_mem/ode_solver_endtime.py```, this mode only support integration from start time t0 to end time t1, and output a tensor for time t1.
 
