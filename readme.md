@@ -9,7 +9,8 @@ This library provides ordinary differential equation (ODE) solvers implemented i
 ## Examples
 ### Three-body problem
 Please run ```python three_body_problem.py ```. <br/>
-The problem is: given trajectories of three stars, how to estimate their masses and predict their future trajectory.
+The problem is: given trajectories of three stars, how to estimate their masses and predict their future trajectory.<br/>
+[Watch the videos](https://www.youtube.com/watch?v=hYYAKl3PBzU)
 [![Alt text](./figures/three_body.png)](https://www.youtube.com/watch?v=hYYAKl3PBzU)
 
 ### Image classification on Cifar
