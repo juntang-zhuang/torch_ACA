@@ -31,9 +31,9 @@ tensorboard --logdir cifar_classification/resnet/resnet_RK12_lr_0.1_h_None
 
 - Note: <br/>
 ```
-   (1) Evaluation time ```t_eval``` must be specified in a list. 
+   (1) Evaluation time 't_eval' must be specified in a list. 
         e.g.  t_eval = [a1, a2, a3 ..., an]  where t0 < a1 < a2 < ... t1, or t1 < a1 < a2 < ... < t0 
-   (2) suppose ```z``` is of shape ```AxBxCx...```, then the output is of shape ```nxAxBxCx...``` 
+   (2) suppose 'z' is of shape 'AxBxCx...', then the output is of shape 'nxAxBxCx...' 
 ```
 
 #### Warning
