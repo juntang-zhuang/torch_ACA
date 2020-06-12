@@ -21,7 +21,7 @@ python train.py
 
 -```train_multieval.py``` uses the solver defined in ```torch_ACA/odesolver/ode_solver.py```, this mode supports extracting outputs from multiple time points between t0 and t1. 
 
--Note: 
+-Note: <br/>
 (1) Evaluation time ```t_eval``` must be specified in a list. <br/>
     e.g.  t_eval = [a1, a2, a3 ..., an]  where t0 < a1 < a2 < ... t1, or t1 < a1 < a2 < ... < t0 <br/>
 (2) suppose ```z``` is of shape ```AxBxCx...```, then the output is of shape ```nxAxBxCx...``` <br/>
