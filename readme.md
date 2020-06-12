@@ -10,6 +10,7 @@ This library provides ordinary differential equation (ODE) solvers implemented i
 ### Three-body problem
 Please run ```python three_body_problem.py ```. <br/>
 The problem is: given trajectories of three stars, how to estimate their masses and predict their future trajectory.
+[![Watch the video]](https://www.youtube.com/watch?v=hYYAKl3PBzU)
 
 ### Image classification on Cifar
 A ResNet18 is modified into its corresponding ODE model, and achieve ~5% errorate (vs 10% by adjoint method and naive method).
@@ -43,6 +44,10 @@ tensorboard --logdir cifar_classification/resnet/resnet_RK12_lr_0.1_h_None
 #### Warning
 - This repository currently only supports ``` \frac{dz}{dt} = f(t,z) ``` where ```z``` is a tensor (other data types such as tuple are not supported). <br/>
 - If you are using a function ```f``` which produces many output tensors or ```z``` is a list of tensors, you can concatenate them into a single tensor within definition of ```f```.
+
+### Results
+![Alt text](./figures/ACC_time_confidence.svg)
+<img src="./figures/ACC_time_confidence.svg">
 
 ## References
 [1] Zhuang, Juntang, et al. "Adaptive Checkpoint Adjoint Method for Gradient Estimation in Neural ODE." arXiv preprint arXiv:2006.02493 (2020). [[arxiv]](https://arxiv.org/abs/2006.02493) <br/>
