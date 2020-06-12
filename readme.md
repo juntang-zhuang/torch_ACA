@@ -2,9 +2,9 @@
 This library provides ordinary differential equation (ODE) solvers implemented in PyTorch. Backpropagation through all solvers is supported using the adjoint method with a checkpoint strategy to guarantee numerical accuracy in reverse-mode trajectory. For usage of ODE solvers in deep learning applications, see [1].
 
 ## Dependencies
-PyTorch 1.0 (Will test on other versions later)
-tensorboardX
-Pythorn 3
+- PyTorch 1.0 (Will test on other versions later)
+- tensorboardX
+- Pythorn 3
 
 ## Examples
 ### Image classification on Cifar
