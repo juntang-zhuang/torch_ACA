@@ -47,7 +47,7 @@ tensorboard --logdir cifar_classification/resnet/resnet_RK12_lr_0.1_h_None
 - If you are using a function ```f``` which produces many output tensors or ```z``` is a list of tensors, you can concatenate them into a single tensor within definition of ```f```.
 
 ### Results
-<img src="./figures/ACC_time_confidence.png">
+<img src="./figures/results.png">
 
 ## References
 [1] Zhuang, Juntang, et al. "Adaptive Checkpoint Adjoint Method for Gradient Estimation in Neural ODE." arXiv preprint arXiv:2006.02493 (2020). [[arxiv]](https://arxiv.org/abs/2006.02493) <br/>
