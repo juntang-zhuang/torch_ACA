@@ -2,11 +2,12 @@
 This library provides ordinary differential equation (ODE) solvers implemented in PyTorch. Backpropagation through all solvers is supported using the adjoint method with a checkpoint strategy to guarantee numerical accuracy in reverse-mode trajectory. For usage of ODE solvers in deep learning applications, see [1].
 
 ## Examples
+### Image classification on Cifar
 
 
 
 
-### References
+## References
 [1] Zhuang, Juntang, et al. "Adaptive Checkpoint Adjoint Method for Gradient Estimation in Neural ODE." arXiv preprint arXiv:2006.02493 (2020). [[arxiv]](https://arxiv.org/abs/2006.02493)
 
 Please cite our paper if you find this repository useful:
