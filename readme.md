@@ -11,7 +11,7 @@ This library provides ordinary differential equation (ODE) solvers implemented i
 Please run ```python three_body_problem.py ```. <br/>
 The problem is: given trajectories of three stars, how to estimate their masses and predict their future trajectory.<br/>
 [Watch the videos](https://www.youtube.com/playlist?list=PL7KkG3n9bER4ODAMzAKzfXIaF0ndUxK-N)
-[![Alt text](./figures/three_body.png)](https://www.youtube.com/playlist?list=PL7KkG3n9bER4ODAMzAKzfXIaF0ndUxK-N)
+[![Alt text](./figures/three_body.png)](./figures/example4.mp4)
 
 ### Image classification on Cifar
 A ResNet18 is modified into its corresponding ODE model, and achieve ~5% errorate (vs 10% by adjoint method and naive method).
