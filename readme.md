@@ -47,7 +47,6 @@ tensorboard --logdir cifar_classification/resnet/resnet_RK12_lr_0.1_h_None
 
 ### Results
 ![Alt text](./figures/ACC_time_confidence.svg)
-<img src="./figures/ACC_time_confidence.svg">
 
 ## References
 [1] Zhuang, Juntang, et al. "Adaptive Checkpoint Adjoint Method for Gradient Estimation in Neural ODE." arXiv preprint arXiv:2006.02493 (2020). [[arxiv]](https://arxiv.org/abs/2006.02493) <br/>
