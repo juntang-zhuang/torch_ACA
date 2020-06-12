@@ -17,23 +17,21 @@ python train.py
 #### Train with different modes of solvers
 ```train.py``` uses the solver defined in ```torch_ACA/odesolver_mem/ode_solver_endtime.py```, this mode only support integration from start time t0 to end time t1, and output a tensor for time t1.
 
-```train_mem.py``` uses the solver defined in ```torch_ACA/odesolver_mem/adjoint_mem.py```, this mode only support integration from start time t0 to end time t1, and output a tensor for time t1. Furtheremore, this mode uses \\[O(N_f + N_t)\\] memory, which is more memory-efficient than normal mode, but the running time is longer.
+```train_mem.py``` uses the solver defined in ```torch_ACA/odesolver_mem/adjoint_mem.py```, this mode only support integration from start time t0 to end time t1, and output a tensor for time t1. Furtheremore, this mode uses O(Nf + Nt) memory, which is more memory-efficient than normal mode, but the running time is longer.
 
 ```train_multieval.py``` uses the solver defined in ```torch_ACA/odesolver/ode_solver.py```, this mode supports extracting outputs from multiple time points between t0 and t1. 
 Note: 
 (1) Evaluation time ```t_eval``` must be specified in a list. 
-    e.g.  t_eval = [a1, a2, a3 ..., an]  where 
-suppose \\[z\\] is of shape xxx, 
+    e.g.  t_eval = [a1, a2, a3 ..., an]  where t0 < a1 < a2 < ... t1, or t1 < a1 < a2 < ... < t0
+(2) suppose ```z``` is of shape ```AxBxCx...```, then the output is of shape ```nxAxBxCx...```
 
 #### Warning
-This repository currently only supports \\[ \frac{dz}{dt} = f(t,z) \\] where \\[z\\] is a tensor (other data types such as tuple are not supported).
-If you are using a function \\[f\\] which produces many output tensors, you can concatante them into a single tensor within definition of \\[f\\].
+This repository currently only supports ``` \frac{dz}{dt} = f(t,z) ``` where ```z``` is a tensor (other data types such as tuple are not supported).
+If you are using a function ```f``` which produces many output tensors, you can concatante them into a single tensor within definition of ```f```.
 
 ### Three-body problem
 Please run ```python three_body_problem.py ```.
 The problem is: given trajectories of three stars, how to estimate their masses and predict their future trajectory.
-
-
 
 
 ## References
