@@ -25,6 +25,49 @@ options.update({'neval_max': args.neval_max})
 
 out = odesolve(odefunc, x, options)
 ```
+### Train with different modes
+- End-time fast mode <br/>
+```train.py``` uses the solver defined in ```torch_ACA/odesolver_mem/ode_solver_endtime.py```, this mode only support integration from start time t0 to end time t1, and output a tensor for time t1.
+```
+from torch_ACA import odesolve_endtime as odesolve
+out = odesolve(odefunc, x, options)
+```
+
+- End-time memory-efficient mode <br/>
+```train_mem.py``` uses the solver defined in ```torch_ACA/odesolver_mem/adjoint_mem.py```, this mode only support integration from start time t0 to end time t1, and output a tensor for time t1. Furtheremore, this mode uses O(Nf + Nt) memory, which is more memory-efficient than normal mode, but the running time is longer.
+```
+from torch_ACA import odesolve_adjoint as odesolve
+out = odesolve(odefunc, x, options)
+```
+
+- Multiple evaluation time-points mode <br/>
+```train_multieval.py``` uses the solver defined in ```torch_ACA/odesolver/ode_solver.py```, this mode supports extracting outputs from multiple time points between t0 and t1. 
+```
+## Case1: t_eval contains one evaluation time points
+from torch_ACA import odesolve
+options.update({'t_eval': [args.t1]})
+out = odesolve(odefunc, x, options)
+out = out[0,...]
+
+## Case2:  t_eval contains multiple time points
+from torch_ACA import odesolve
+options.update({'t_eval': [a1, a2, a3, ... an]})
+out = odesolve(odefunc, x, options)
+out1, out2, ... outn = out[0,...], out[1,...], ... out[n-1,...]
+```
+
+- Note for multiple evaluation time-points mode: <br/>
+```
+   (1) Evaluation time 't_eval' must be specified in a list. 
+        e.g.  t_eval = [a1, a2, a3 ..., an]  
+        where t0 < a1 < a2 < ... t1, or t1 < a1 < a2 < ... < t0 
+   (2) Suppose 'z' is of shape 'AxBxCx...', then the output is of shape 'nxAxBxCx...', 
+        while in the end-time mode the output is of shape 'AxBxCx...'
+   (3) Both multiple time-points mode and end-time fast mode support higher order derivatives 
+        (e.g. add gradient penalty in the loss function).
+```
+
+
 ## Examples
 ### Three-body problem
 Please run ```python three_body_problem.py ```. <br/>
@@ -42,27 +85,6 @@ python train.py
 You can visualize the training and validation curve with 
 ```
 tensorboard --logdir cifar_classification/resnet/resnet_RK12_lr_0.1_h_None
-```
-
-#### Train with different modes of solvers
-- End-time fast mode <br/>
-```train.py``` uses the solver defined in ```torch_ACA/odesolver_mem/ode_solver_endtime.py```, this mode only support integration from start time t0 to end time t1, and output a tensor for time t1.
-
-- End-time memory-efficient mode <br/>
-```train_mem.py``` uses the solver defined in ```torch_ACA/odesolver_mem/adjoint_mem.py```, this mode only support integration from start time t0 to end time t1, and output a tensor for time t1. Furtheremore, this mode uses O(Nf + Nt) memory, which is more memory-efficient than normal mode, but the running time is longer.
-
-- Multiple evaluation time-points mode <br/>
-```train_multieval.py``` uses the solver defined in ```torch_ACA/odesolver/ode_solver.py```, this mode supports extracting outputs from multiple time points between t0 and t1. 
-
-- Note for multiple evaluation time-points mode: <br/>
-```
-   (1) Evaluation time 't_eval' must be specified in a list. 
-        e.g.  t_eval = [a1, a2, a3 ..., an]  
-        where t0 < a1 < a2 < ... t1, or t1 < a1 < a2 < ... < t0 
-   (2) Suppose 'z' is of shape 'AxBxCx...', then the output is of shape 'nxAxBxCx...', 
-        while in the end-time mode the output is of shape 'AxBxCx...'
-   (3) Both multiple time-points mode and end-time fast mode support higher order derivatives 
-        (e.g. add gradient penalty in the loss function).
 ```
 
 #### Warning
