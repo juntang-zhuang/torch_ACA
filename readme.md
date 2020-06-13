@@ -15,7 +15,7 @@
 ### Three-body problem
 Please run ```python three_body_problem.py ```. <br/>
 The problem is: given trajectories of three stars, how to estimate their masses and predict their future trajectory.<br/>
-[Watch the videos in folde ```figures```](https://www.youtube.com/playlist?list=PL7KkG3n9bER4ODAMzAKzfXIaF0ndUxK-N)
+[Watch the videos in folder ```figures```](https://www.youtube.com/playlist?list=PL7KkG3n9bER4ODAMzAKzfXIaF0ndUxK-N)
 [![Alt text](./figures/three_body.png)](https://www.youtube.com/playlist?list=PL7KkG3n9bER4ODAMzAKzfXIaF0ndUxK-N)
 
 ### Image classification on Cifar
