@@ -79,12 +79,15 @@ out1, out2, ... outn = out[0,...], out[1,...], ... out[n-1,...]
    (4) Adaptive stepsize solver is recommended in multi evaluation time-points mode
 ```
 
-#### Gradient w.r.t. start time t0 and end time t1, or f is non-autonomous
+#### Gradient w.r.t. start time t0 and end time t1 when f is non-autonomous
 - In case we need to take derivate w.r.t. time, we can add one more dimension to the output of ```f```, s.t. ```\frac{dt}{dt}=1```. Basically, view time as a separate dimension, whose derivate is a constant 1. 
 - Set the start time t0 as a ```Variable``` or a ```Parameter``` in PyTorch, then you can get its derivative.
 - Gradient w.r.t t1 is somehow trivial, you can simply calculate it as <br/>
 ```\frac{dL}{dt1} = \frac{dL}{dz(t1)} \frac{dz(t1)}{dt1} = \frac{dL}{dz(t1)} f(t1,z(t1), \theta)```
-
+- If we want to get ```\frac{dL}{dt}``` where ```t0<t<t1```, there are two cases: <br/>
+  (1) We explicitly take out the hidden states ```z(t)```, and the loss function contains ```z(t)``` explcitly, then this can be easily solved with standard backpropagation. <br/>
+  (2) Loss function does not contain ```z(t)``` explcitly, this situation is slightly tricky, and we need to solve a separate adjoint equation. The coding to achieve this is somehow messy, and currently not included in this repo.
+  
 #### Warning
 - This repository currently only supports ``` \frac{dz}{dt} = f(t,z) ``` where ```z``` is a tensor (other data types such as tuple are not supported). <br/>
 - If you are using a function ```f``` which produces many output tensors or ```z``` is a list of tensors, you can concatenate them into a single tensor within definition of ```f```.
