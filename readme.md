@@ -85,8 +85,8 @@ out1, out2, ... outn = out[0,...], out[1,...], ... out[n-1,...]
 - Gradient w.r.t t1 is somehow trivial, you can simply calculate it as <br/>
 ```\frac{dL}{dt1} = \frac{dL}{dz(t1)} \frac{dz(t1)}{dt1} = \frac{dL}{dz(t1)} f(t1,z(t1), \theta)```
 - If we want to get ```\frac{dL}{dt}``` where ```t0<t<t1```, there are two cases: <br/>
-  (1) We explicitly take out the hidden states ```z(t)```, and the loss function contains ```z(t)``` explcitly, then this can be easily solved with standard backpropagation. <br/>
-  (2) Loss function does not contain ```z(t)``` explcitly, this situation is slightly tricky, and we need to solve a separate adjoint equation. The coding to achieve this is somehow messy, and currently not included in this repo.
+  - - (1) We explicitly take out the hidden states ```z(t)```, and the loss function contains ```z(t)``` explcitly, then this can be easily solved with standard backpropagation. <br/>
+  - - (2) Loss function does not contain ```z(t)``` explcitly, this situation is slightly tricky, and we need to solve a separate adjoint equation. The coding to achieve this is somehow messy, and currently not included in this repo.
   
 #### Warning
 - This repository currently only supports ``` \frac{dz}{dt} = f(t,z) ``` where ```z``` is a tensor (other data types such as tuple are not supported). <br/>
