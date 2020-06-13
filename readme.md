@@ -43,9 +43,12 @@ tensorboard --logdir cifar_classification/resnet/resnet_RK12_lr_0.1_h_None
 - Note for multiple evaluation time-points mode: <br/>
 ```
    (1) Evaluation time 't_eval' must be specified in a list. 
-        e.g.  t_eval = [a1, a2, a3 ..., an]  where t0 < a1 < a2 < ... t1, or t1 < a1 < a2 < ... < t0 
-   (2) suppose 'z' is of shape 'AxBxCx...', then the output is of shape 'nxAxBxCx...', while in the end-time mode the output is of shape 'AxBxCx...'
-   (3) Both multiple time-points mode and end-time fast mode support higher order derivatives (e.g. add gradient penalty in the loss function).
+        e.g.  t_eval = [a1, a2, a3 ..., an]  
+        where t0 < a1 < a2 < ... t1, or t1 < a1 < a2 < ... < t0 
+   (2) suppose 'z' is of shape 'AxBxCx...', then the output is of shape 'nxAxBxCx...', 
+        while in the end-time mode the output is of shape 'AxBxCx...'
+   (3) Both multiple time-points mode and end-time fast mode support higher order derivatives 
+        (e.g. add gradient penalty in the loss function).
 ```
 
 #### Warning
@@ -62,7 +65,8 @@ Please cite our paper if you find this repository useful:
 ```
 @article{zhuang2020adaptive,
   title={Adaptive Checkpoint Adjoint Method for Gradient Estimation in Neural ODE},
-  author={Zhuang, Juntang and Dvornek, Nicha and Li, Xiaoxiao and Tatikonda, Sekhar and Papademetris, Xenophon and Duncan, James},
+  author={Zhuang, Juntang and Dvornek, Nicha and Li, Xiaoxiao and Tatikonda, 
+  Sekhar and Papademetris, Xenophon and Duncan, James},
   journal={ICML},
   year={2020}
 }
