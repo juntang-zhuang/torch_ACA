@@ -51,14 +51,16 @@ out = odesolve(odefunc, x, options)
 
 #### Multiple evaluation time-points mode <br/>
 ```cifar_classification/train_multieval.py``` uses the solver defined in ```torch_ACA/odesolver/ode_solver.py```, this mode supports extracting outputs from multiple time points between t0 and t1. 
+
+- Case1: t_eval contains one evaluation time points
 ```
-## Case1: t_eval contains one evaluation time points
 from torch_ACA import odesolve
 options.update({'t_eval': [args.t1]})
 out = odesolve(odefunc, x, options)
 out = out[0,...]
 
-## Case2:  t_eval contains multiple time points
+- Case2:  t_eval contains multiple time points
+```
 from torch_ACA import odesolve
 options.update({'t_eval': [a1, a2, a3, ... an]})
 out = odesolve(odefunc, x, options)
