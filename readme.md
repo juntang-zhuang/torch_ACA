@@ -11,6 +11,20 @@
 - tensorboardX
 - Pythorn 3
 
+## How to use
+```
+options = {}
+options.update({'method':args.method})
+options.update({'h': args.h})
+options.update({'t0': args.t0})
+options.update({'t1': args.t1})
+options.update({'rtol': args.rtol})
+options.update({'atol': args.atol})
+options.update({'print_neval': args.print_neval})
+options.update({'neval_max': args.neval_max})
+
+out = odesolve(odefunc, x, options)
+```
 ## Examples
 ### Three-body problem
 Please run ```python three_body_problem.py ```. <br/>
