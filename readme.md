@@ -77,6 +77,10 @@ out1, out2, ... outn = out[0,...], out[1,...], ... out[n-1,...]
    (4) Adaptive stepsize solver is recommended in multi evaluation time-points mode
 ```
 
+#### Warning
+- This repository currently only supports ``` \frac{dz}{dt} = f(t,z) ``` where ```z``` is a tensor (other data types such as tuple are not supported). <br/>
+- If you are using a function ```f``` which produces many output tensors or ```z``` is a list of tensors, you can concatenate them into a single tensor within definition of ```f```.
+
 
 ## Examples
 ### Three-body problem
@@ -96,10 +100,6 @@ You can visualize the training and validation curve with
 ```
 tensorboard --logdir cifar_classification/resnet/resnet_RK12_lr_0.1_h_None
 ```
-
-#### Warning
-- This repository currently only supports ``` \frac{dz}{dt} = f(t,z) ``` where ```z``` is a tensor (other data types such as tuple are not supported). <br/>
-- If you are using a function ```f``` which produces many output tensors or ```z``` is a list of tensors, you can concatenate them into a single tensor within definition of ```f```.
 
 ### Results
 <img src="./figures/results.png">
