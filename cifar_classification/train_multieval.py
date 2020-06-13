@@ -34,7 +34,7 @@ def lr_schedule(lr, epoch):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--network', type=str, choices=['resnet', 'sqnxt'], default='resnet')
-parser.add_argument('--method', type=str, choices=['Euler', 'RK2', 'RK4', 'RK23', 'RK45', 'RK12'], default='RK12')
+parser.add_argument('--method', type=str, choices=['Euler', 'RK2', 'RK4', 'RK23', 'RK45', 'RK12','Dopri5'], default='RK12')
 parser.add_argument('--num_epochs', type=int, default=90)
 parser.add_argument('--start_epoch', type=int, default=0)
 # Checkpoints
