@@ -26,7 +26,7 @@ options.update({'neval_max': args.neval_max})
 out = odesolve(odefunc, x, options)
 ```
 ### parameters
-See ```https:github.com/juntang-zhuang/torch_ACA/torch_ACA/odesolver/adaptive_grid_solver.py``` for a full list of parameters
+See https:github.com/juntang-zhuang/torch_ACA/torch_ACA/odesolver/adaptive_grid_solver.py for a full list of parameters
 - method: which ode solver. Fixed stepsize solvers include ['Euler','RK2','RK4'], adaptive stepsize solvers include ['RK12','RK23','RK45','Dopri5']
 - h: initial stepsize. h must be specified for fixed stepsize solvers, and can be set as None (or not parsed) for adaptive solvers.
 - t0, t1: start and end time. t1 can be either smaller or larger than t0.
