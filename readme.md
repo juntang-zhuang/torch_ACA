@@ -26,21 +26,21 @@ options.update({'neval_max': args.neval_max})
 out = odesolve(odefunc, x, options)
 ```
 ### Train with different modes
-- End-time fast mode <br/>
+#### End-time fast mode <br/>
 ```cifar_classification/train.py``` uses the solver defined in ```torch_ACA/odesolver_mem/ode_solver_endtime.py```, this mode only support integration from start time t0 to end time t1, and output a tensor for time t1.
 ```
 from torch_ACA import odesolve_endtime as odesolve
 out = odesolve(odefunc, x, options)
 ```
 
-- End-time memory-efficient mode <br/>
+#### End-time memory-efficient mode <br/>
 ```cifar_classification/train_mem.py``` uses the solver defined in ```torch_ACA/odesolver_mem/adjoint_mem.py```, this mode only support integration from start time t0 to end time t1, and output a tensor for time t1. Furtheremore, this mode uses O(Nf + Nt) memory, which is more memory-efficient than normal mode, but the running time is longer.
 ```
 from torch_ACA import odesolve_adjoint as odesolve
 out = odesolve(odefunc, x, options)
 ```
 
-- Multiple evaluation time-points mode <br/>
+#### Multiple evaluation time-points mode <br/>
 ```cifar_classification/train_multieval.py``` uses the solver defined in ```torch_ACA/odesolver/ode_solver.py```, this mode supports extracting outputs from multiple time points between t0 and t1. 
 ```
 ## Case1: t_eval contains one evaluation time points
