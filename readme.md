@@ -3,6 +3,7 @@
 - Compared with ```torchdiffeq``` implementation, ACA uses a trajectory checkpoint strategy to guarantee numerical accuracy in reverse-mode trajectory, hence is more accurate in gradient estimation. <br/>
 - To our knowledge, ACA is the first method to enable Neural-ODE model to outperform a standard ResNet model on benchmark such as Cifar classification, which also supports adaptive-stepsize and error estimation as the default of most widely used softwares. <br/>
 - ACA also support conventional parametric ODE models. <br/>
+- ACA is written in PyTorch, hence supports automatic differentiation, and can be plugged into exisiting neural network models. Furthermore, with ACA, we can build ODE models, and efficiently estimate the unkown parameters inside the model using optimizers provided by PyTorch.
 
 ## Dependencies
 - PyTorch 1.0 (Will test on other versions later)
