@@ -28,7 +28,7 @@ class AdaptiveGridSolver(nn.Module):
 
     def __init__(self, func, t0=0.0, t1=1.0, h=None, rtol=1e-3, atol=1e-6, neval_max=500000,
                  print_neval=False, print_direction=False, step_dif_ratio=1e-3, safety=None,
-                 delete_graph = True, regenerate_graph = True
+                 delete_graph = True, regenerate_graph = False
                  ):
         """
         ----------------
