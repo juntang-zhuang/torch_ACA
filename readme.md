@@ -88,7 +88,7 @@ out1, out2, ... outn = out[0,...], out[1,...], ... out[n-1,...]
   -  (1) We explicitly take out the hidden states ```z(t)```, and the loss function contains ```z(t)``` explcitly, then this can be easily solved with standard backpropagation. <br/>
   - (2) Loss function does not contain ```z(t)``` explcitly, this situation is slightly tricky, and we need to solve a separate adjoint equation. The coding to achieve this is somehow messy, and currently not included in this repo.
   
-#### Warning
+#### The type of returned result from ```f``` should be a single tensor
 - This repository currently only supports ``` \frac{dz}{dt} = f(t,z) ``` where ```z``` is a tensor (other data types such as tuple are not supported). <br/>
 - If you are using a function ```f``` which produces many output tensors or ```z``` is a list of tensors, you can concatenate them into a single tensor within definition of ```f```.
 
