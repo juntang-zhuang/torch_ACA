@@ -27,12 +27,12 @@ out = odesolve(odefunc, x, options)
 ```
 ### Parameters
 See https://github.com/juntang-zhuang/torch_ACA/blob/master/torch_ACA/odesolver/adaptive_grid_solver.py for a full list of parameters
-- method: which ode solver. Fixed stepsize solvers include ['Euler','RK2','RK4'], adaptive stepsize solvers include ['RK12','RK23','RK45','Dopri5']
-- h: initial stepsize. h must be specified for fixed stepsize solvers, and can be set as None (or not parsed) for adaptive solvers.
-- t0, t1: start and end time. t1 can be either smaller or larger than t0.
-- rtol, atol: relative and absolute error tolerance for adaptive solvers. 
-- print_neval: bool type, print number of evaluations of the function.
-- neval_max: the maximum number of function evaluation, typically set as a large number (e.g. 500,000). If this number is reached, the ODE is stiff.
+- ```method```: which ode solver. Fixed stepsize solvers include ['Euler','RK2','RK4'], adaptive stepsize solvers include ['RK12','RK23','RK45','Dopri5']
+- ```h```: initial stepsize. h must be specified for fixed stepsize solvers, and can be set as None (or not parsed) for adaptive solvers.
+- ```t0, t1```: start and end time. t1 can be either smaller or larger than t0.
+- ```rtol, atol```: relative and absolute error tolerance for adaptive solvers. 
+- ```print_neval```: bool type, print number of evaluations of the function.
+- ```neval_max```: the maximum number of function evaluation, typically set as a large number (e.g. 500,000). If this number is reached, the ODE is stiff.
 
 ### Train with different modes
 #### End-time fast mode <br/>
