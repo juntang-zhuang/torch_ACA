@@ -69,16 +69,16 @@ out1, out2, ... outn = out[0,...], out[1,...], ... out[n-1,...]
 
 - Note for multiple evaluation time-points mode: <br/>
 ```
-   (1) Evaluation time 't_eval' must be specified in a list. 
+  (1) Evaluation time 't_eval' must be specified in a list. 
         e.g.  t_eval = [a1, a2, a3 ..., an]  
         where t0 < a1 < a2 < ... t1, or t1 < a1 < a2 < ... < t0 
-   (2) Suppose 'z' is of shape 'AxBxCx...', then the output is of shape 'nxAxBxCx...', 
+  (2) Suppose 'z' is of shape 'AxBxCx...', then the output is of shape 'nxAxBxCx...', 
         while in the end-time mode the output is of shape 'AxBxCx...'
-   (3) Both multiple time-points mode and end-time fast mode support higher order derivatives 
+  (3) Both multiple time-points mode and end-time fast mode support higher order derivatives 
         (e.g. add gradient penalty in the loss function)
         (e.g. loss.backward(retain_graph=True, create_graph=True); a = param.grad; 
               b = torch.sum(a); b.backward() )
-   (4) Adaptive stepsize solver is recommended in multi evaluation time-points mode
+  (4) Adaptive stepsize solver is recommended in multi evaluation time-points mode
 ```
 
 #### Gradient w.r.t. start time t0 and end time t1 when f is non-autonomous
