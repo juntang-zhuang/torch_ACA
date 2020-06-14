@@ -75,7 +75,8 @@ out1, out2, ... outn = out[0,...], out[1,...], ... out[n-1,...]
    (2) Suppose 'z' is of shape 'AxBxCx...', then the output is of shape 'nxAxBxCx...', 
         while in the end-time mode the output is of shape 'AxBxCx...'
    (3) Both multiple time-points mode and end-time fast mode support higher order derivatives 
-        (e.g. add gradient penalty in the loss function).
+        (e.g. add gradient penalty in the loss function)
+        (e.g.  a = loss.backward(retain_graph=True, create_graph=True); b = param.grad; b.backward() )
    (4) Adaptive stepsize solver is recommended in multi evaluation time-points mode
 ```
 
