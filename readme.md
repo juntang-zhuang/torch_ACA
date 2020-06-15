@@ -109,10 +109,11 @@ Code is in folder ```cifar_classification```
 ```
 python train.py
 ```
-Visualize the training and validation curve with 
+#### Visualize the training and validation curve with 
 ```
 tensorboard --logdir cifar_classification/resnet/resnet_RK12_lr_0.1_h_None
 ```
+#### Test with different solvers WITHOUT re-training
 Test a pre-trained model using different ode solvers, you can specify solver type, stepsize, toelrance and other parameters in ```test.py```
 ```
 python test.py --method Euler --h 0.2 --resume 'pre-trained weights path'
