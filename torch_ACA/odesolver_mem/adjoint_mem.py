@@ -39,7 +39,7 @@ class Checkpointing_Adjoint(torch.autograd.Function):
         ctx.options = options
 
         with torch.no_grad():
-            solver = odesolve_endtime(func, z0, options, return_solver=True, regenerate_graph = True)
+            solver = odesolve_endtime(func, z0, options, return_solver=True, regenerate_graph = False)
             #solver.func.load_state_dict(state0)
             ans, steps = solver.integrate(z0, return_steps=True)
 
