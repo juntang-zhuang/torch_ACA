@@ -4,7 +4,7 @@
 - To our knowledge, ACA is the first adaptive solver to enable Neural-ODE model to outperform a ResNet model on benchmark such as Cifar classification, which also supports adaptive-stepsize and error estimation as most widely used softwares. <br/>
 - ACA supports conventional parametric ODE models. <br/>
 - ACA is written in PyTorch, hence supports automatic differentiation, and can be plugged into exisiting neural network models. Furthermore, with ACA, we can build ODE models, and efficiently estimate the unkown parameters inside the model using optimizers provided by PyTorch.
-- ACA supports higher order derivative (e.g. add gradient penalty to the loss function).
+- ACA supports multi-GPU trainng and higher order derivative (e.g. add gradient penalty to the loss function).
 
 ## Dependencies
 - PyTorch 1.0 (Will test on other versions later)
