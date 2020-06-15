@@ -9,7 +9,7 @@
 ## Dependencies
 - PyTorch 1.0 (Will test on other versions later)
 - tensorboardX
-- Pythorn 3
+- Python 3
 
 ## How to use
 ```
