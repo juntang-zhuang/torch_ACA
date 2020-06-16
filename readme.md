@@ -1,9 +1,8 @@
 # PyTorch implementation of "Adaptive Checkpoint Adjoint" (ACA) for an accurate and differentiable ODE solver
-- This library provides ordinary differential equation (ODE) solvers implemented in PyTorch as proposed in [[1]](https://arxiv.org/abs/2006.02493). <br/>
+- This library provides ordinary differential equation (ODE) solvers implemented in PyTorch as proposed in [[1]](https://arxiv.org/abs/2006.02493), and can be plugged into exisiting neural network models. <br/>
 - Compared with ```torchdiffeq``` implementation, ACA uses a trajectory checkpoint strategy to guarantee numerical accuracy in reverse-mode trajectory, hence is more accurate in gradient estimation. <br/>
 - To our knowledge, ACA is the first adaptive solver to enable Neural-ODE model to outperform a ResNet model on benchmark such as Cifar classification, which also supports adaptive-stepsize and error estimation as most widely used softwares. <br/>
 - ACA supports conventional parametric ODE models. <br/>
-- ACA is written in PyTorch, hence supports automatic differentiation, and can be plugged into exisiting neural network models. Furthermore, with ACA, we can build ODE models, and efficiently estimate the unkown parameters inside the model using optimizers provided by PyTorch.
 - ACA supports multi-GPU trainng and higher order derivative (e.g. add gradient penalty to the loss function).
 
 ## Dependencies
