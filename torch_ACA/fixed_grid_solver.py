@@ -118,7 +118,7 @@ class FixedGridSolver(nn.Module):
 
         # determine integration steps
         if predefine_steps is None: # use steps defined by h
-            steps = [self.t0 + n * abs(self.h) * self.time_direction for n in range(self.Nt)]
+            steps = [self.t0 + (n+1)* abs(self.h) * self.time_direction for n in range(self.Nt)]
         else:
             steps = predefine_steps
 
@@ -164,7 +164,7 @@ class FixedGridSolver(nn.Module):
             if self.dense_output:
                 self.update_dense_state(t_current, point, self.t_end, y_old, y_current, variables)
 
-            while (self.t_end is not None) and abs(point - self.t0) > abs(self.t_end - self.t0) and \
+            while (self.t_end is not None) and abs(point - self.t0) >= abs(self.t_end - self.t0) and \
                     abs(t_current - self.t0) <= abs(self.t_end - self.t0):  # if next step is beyond integration time
                 # interpolate and record output
                 all_evaluations.append(
@@ -195,7 +195,7 @@ class FixedGridSolver(nn.Module):
             ind_found = False
             while ind < len(self.dense_states['t_start']):
                 t_start, t_end = self.dense_states['t_start'][ind], self.dense_states['t_end'][ind],
-                if abs(t_end - self.t0) > abs(_t_eval - self.t0) and \
+                if abs(t_end - self.t0) >= abs(_t_eval - self.t0) and \
                     abs(t_start - self.t0) <= abs(_t_eval - self.t0):
                     ind_found = True
                     break
